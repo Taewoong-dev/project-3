@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">IssuseTracker</string>
+    <string name="issue_list">issue_list</string>
+    <string name="issue_multi_selection_list">issue_multi_selection_list</string>
+    <string name="detail_description">detail_description</string>
+    <string name="edit_content">edit_content</string>
+    <string name="checkbox">checkbox</string>
+    <string name="go_back">go_back</string>
+    <string name="issue_title">이슈</string>
+    <string name="return_destination">해제</string>
+    <string name="edit_compelete">완료</string>
+    <string name="filter_issue_open">열린 이슈</string>
+    <string name="filter_practitioner">담당자</string>
+    <string name="filter_label">레이블</string>
+    <string name="filter_milestone">마일스톤</string>
+    <string name="filter_writer">작성자</string>
+    <string name="issue_list_title">제목</string>
+    <string name="issue_list_label">라벨</string>
+    <string name="edit_or_delete">edit_or_delete</string>
+    <string name="issue_close">이슈 닫기</string>
+    <string name="issue_delete">이슈 삭제</string>
+    <string name="edit_issue_btn">작성</string>
+    <string name="guide_input_title">제목을 입력하세요</string>
+    <string name="guide_input_body">내용을 입력하세요</string>
+    <string name="guide_assignee">담당자</string>
+    <string name="assignee_godrm">godrm</string>
+    <string name="assignee_ivybae">ivybae</string>
+    <string name="assignee_sam">sam</string>
+    <string name="assignee_zello">zello</string>
+    <string name="guide_title">제목</string>
+    <string name="guide_content">내용</string>
+    <string name="detail_fragment_title">Android 디자인 시스템 구현 #3</string>
+    <string name="issue_content_title">내용</string>
+    <string name="filter_assignee">filter_assignee</string>
+
+    <!-- 이슈 목록 -->
+    <string name="str_issue_tracker">Issue Tracker</string>
+    <string name="str_search">검색</string>
+    <string name="str_add_issue">이슈 작성</string>
+    <string name="str_issue_title">이슈 제목</string>
+    <string name="str_issue_content">한 줄 설명</string>
+    <string name="str_issue_milestone">🚩마일스톤</string>
+    <!-- 이슈 필터링 -->
+    <string name="str_open_issue">열린 이슈</string>
+    <string name="str_label">레이블</string>
+    <string name="str_milestone">마일스톤</string>
+    <string name="str_creator">작성자</string>
+    <string name="str_closed_issue">닫힌 이슈</string>
+    <string name="str_assigned_issue">나에게 할당된 이슈</string>
+    <string name="str_created_issue">내가 작성한 이슈</string>
+    <string name="str_mentioned_issue">내가 멘션된 이슈</string>
+    <string name="str_reset_filter">필터 초기화</string>
+    <!-- 이슈 생성 -->
+    <string name="str_new_issue">새로운 이슈 작성</string>
+    <string name="str_title">제목</string>
+    <string name="str_content">내용</string>
+    <string name="str_assignee">담당자</string>
+    <string name="str_assginee_godrm">godrm</string>
+    <string name="str_assignee_ivy">ivybae</string>
+    <string name="string_new_issue">이슈 생성</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 이슈 목록 -->
+    <dimen name="dim_issue_list_fab_margin">32dp</dimen>
+    <dimen name="dim_issue_item_common_margin">16dp</dimen>
+    <dimen name="dim_issue_item_common_padding">4dp</dimen>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/issue_fragment">
+    <fragment
+        android:id="@+id/issue_fragment"
+        android:name="com.boost.issueTracker.ui.issue.main.fragment.IssueListFragmentIssue"
+        android:label="IssueFragment">
+        <action
+            android:id="@+id/action_issue_fragment_to_issue_multi_fragment"
+            app:destination="@id/issue_multi_fragment" />
+        <action
+            android:id="@+id/action_issue_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment" />
+        <action
+            android:id="@+id/action_issue_fragment_to_edit_fragment"
+            app:destination="@id/edit_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail_fragment"
+        android:name="com.boost.issueTracker.ui.issue.detail.DetailFragmentIssue"
+        android:label="DetailFragment">
+        <argument
+            android:name="issue_num"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_detail_fragment_to_edit_fragment"
+            app:destination="@id/edit_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/issue_multi_fragment"
+        android:name="com.boost.issueTracker.ui.issue.multi.fragment.IssueMultiFragmentIssue"
+        android:label="IssueMultiFragment">
+        <action
+            android:id="@+id/action_issue_multi_fragment_to_edit_fragment"
+            app:destination="@id/edit_fragment" />
+        <action
+            android:id="@+id/action_issue_multi_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_fragment"
+        android:name="com.boost.issueTracker.ui.issue.edit.EditFragmentIssue"
+        android:label="EditFragment" />
+</navigation>

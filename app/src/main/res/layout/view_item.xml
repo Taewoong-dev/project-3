@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="30dp"
+        android:hint="@string/issue_list_title"
+        android:maxWidth="100dp"
+        android:textColorHint="#546E7A"
+        android:textSize="16sp"
+        android:singleLine="true"
+        android:ellipsize="none"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/item_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/item_label"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+        android:id="@+id/item_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="15dp"
+        android:gravity="fill_vertical"
+        android:hint="@string/issue_list_label"
+        android:maxWidth="100dp"
+        android:textColorHint="#546E7A"
+        android:textSize="12sp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/item_title"
+        app:layout_constraintStart_toStartOf="@+id/item_title"
+        app:layout_constraintTop_toBottomOf="@id/item_title"
+        app:layout_constraintBottom_toTopOf="@id/item_boarder"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <ImageView
+        android:id="@+id/item_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/edit_or_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_more_vert_24" />
+
+    <View
+        android:id="@+id/item_boarder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/material_dynamic_secondary50"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

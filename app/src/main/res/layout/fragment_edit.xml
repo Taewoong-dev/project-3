@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/edit_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tb_issue_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/baseline_arrow_back_24"
+        app:titleCentered="true" />
+
+    <View
+        android:id="@+id/edit_top_item_boarder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/material_dynamic_secondary50"
+        app:layout_constraintTop_toBottomOf="@id/tb_issue_edit" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/title_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintWidth_max="400dp"
+        app:boxBackgroundMode="filled"
+        app:hintTextColor="@color/black"
+        android:hint="@string/guide_title"
+        app:expandedHintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_top_item_boarder">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/title_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/guide_input_title"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/body_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintWidth_max="400dp"
+        app:boxBackgroundMode="filled"
+        app:hintTextColor="@color/black"
+        android:hint="@string/guide_content"
+        app:expandedHintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/title_input_layout"
+        app:layout_constraintStart_toStartOf="@+id/title_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/title_input_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/body_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/guide_input_body"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/assignee_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/guide_assignee"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/body_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/body_input_layout" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_assignees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/assignee_label"
+        app:layout_constraintTop_toBottomOf="@id/assignee_label">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/godrm"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/assignee_godrm" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ivybae"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/assignee_ivybae" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_sam"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/assignee_sam" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_zello"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/assignee_zello" />
+    </com.google.android.material.chip.ChipGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingStart="4dp"
+    android:paddingEnd="8dp">
+
+    <CheckBox
+        android:id="@+id/check_open"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/str_open_issue" />
+
+    <CheckBox
+        android:id="@+id/check_closed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_closed_issue" />
+
+    <CheckBox
+        android:id="@+id/check_created"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_created_issue" />
+
+    <CheckBox
+        android:id="@+id/check_assigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_assigned_issue" />
+
+    <CheckBox
+        android:id="@+id/check_mentioned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_mentioned_issue" />
+
+</LinearLayout>

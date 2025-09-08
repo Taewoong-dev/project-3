@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detail_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tb_issue_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/baseline_arrow_back_24"/>
+
+    <TextView
+        android:id="@+id/issue_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="5dp"
+        android:text="@string/detail_fragment_title"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_issue_detail" />
+
+    <View
+        android:id="@+id/overview_boarder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/purple"
+        app:layout_constraintTop_toBottomOf="@id/issue_title" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/issue_overview_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bright_purple"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/overview_boarder">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/issue_overview_short"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5분 전, sam님이 작성했습니다."
+            android:textSize="14sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/issue_open_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 열린 이슈"
+            android:textSize="14sp"
+            android:drawableStart="@drawable/outline_error_24" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/issue_writer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" sam"
+            android:textSize="14sp"
+            android:drawableStart="@drawable/outline_account_circle_24" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/issue_documentation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" documentation"
+            android:drawableStart="@drawable/outline_label_24" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/issue_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 그룹 프로젝트: 이슈트래커"
+            android:drawableStart="@drawable/outline_flag_24" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TextView
+        android:id="@+id/issue_content_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingHorizontal="16dp"
+        android:text="@string/issue_content_title"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/issue_overview_container" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/issue_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="16dp"
+        android:text="처음부터 전부 구현하려고 하지 않고 필수적인 기능부터 만든 후, 차근차근 완성도를 높여볼 계획"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/issue_content_title" />
+
+    <View
+        android:id="@+id/detail_boarder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/purple"
+        app:layout_constraintTop_toBottomOf="@id/issue_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

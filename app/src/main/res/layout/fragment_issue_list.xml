@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_tertiary95">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tb_issue_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_tb_issue_list"
+        app:navigationIcon="@drawable/ic_list_check_24"
+        app:title="@string/str_issue_tracker"
+        app:titleCentered="true" />
+
+    <View
+        android:id="@+id/issue_top_item_boarder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/material_dynamic_secondary50"
+        app:layout_constraintTop_toBottomOf="@id/tb_issue_list" />
+
+    <HorizontalScrollView
+        android:id="@+id/sv_filter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/issue_top_item_boarder">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cg_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="4dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_status"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/str_open_issue"
+                    app:closeIcon="@drawable/ic_drop_down_24"
+                    app:closeIconEnabled="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_asignee"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_assignee"
+                    app:closeIcon="@drawable/ic_drop_down_24"
+                    app:closeIconEnabled="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_label"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_label"
+                    app:closeIcon="@drawable/ic_drop_down_24"
+                    app:closeIconEnabled="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_milestone"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_milestone"
+                    app:closeIcon="@drawable/ic_drop_down_24"
+                    app:closeIconEnabled="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_creator"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_creator"
+                    app:closeIcon="@drawable/ic_drop_down_24"
+                    app:closeIconEnabled="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_reset_filter"
+                    style="@style/Widget.Material3.Chip.Assist.Elevated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_reset_filter"
+                    app:chipIcon="@drawable/ic_clear_filter_24" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/pb_issue_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_issue_list" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sl_refresh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sv_filter">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_issue_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_issue_list">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_new_issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dim_issue_list_fab_margin"
+        android:layout_marginBottom="@dimen/dim_issue_list_fab_margin"
+        android:clickable="true"
+        android:contentDescription="@string/str_add_issue"
+        android:src="@drawable/ic_add_issue_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
